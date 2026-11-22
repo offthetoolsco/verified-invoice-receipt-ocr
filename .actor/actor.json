@@ -1,0 +1,16 @@
+{
+  "actorSpecification": 1,
+  "name": "verified-invoice-receipt-ocr",
+  "title": "Math-Verified Invoice & Receipt OCR (Vision LLM + Checksums)",
+  "description": "Extract structured JSON from invoices, receipts & PDFs using Vision LLMs backed by deterministic Decimal arithmetic & self-healing line-item verification.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "minMemoryMbytes": 128,
+  "maxMemoryMbytes": 256,
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  },
+  "dockerfile": "./Dockerfile"
+}

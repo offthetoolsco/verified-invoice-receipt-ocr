@@ -1,0 +1,79 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "source": {
+        "type": ["string", "null"],
+        "title": "Source Document",
+        "description": "Input URL or uploaded filename."
+      },
+      "job_id": {
+        "type": ["string", "null"],
+        "title": "Job ID",
+        "description": "Unique verification job identifier."
+      },
+      "status": {
+        "type": ["string", "null"],
+        "title": "Status",
+        "description": "Final job status (completed or failed)."
+      },
+      "verification_passed": {
+        "type": ["boolean", "null"],
+        "title": "Math Verified",
+        "description": "True when all JSON Schema and Decimal arithmetic checksums pass."
+      },
+      "attempts": {
+        "type": ["integer", "null"],
+        "title": "Attempts",
+        "description": "Number of Vision LLM extraction & self-healing passes executed."
+      },
+      "latency_ms": {
+        "type": ["integer", "null"],
+        "title": "Latency (ms)",
+        "description": "Total end-to-end extraction and verification time in milliseconds."
+      },
+      "data": {
+        "type": ["object", "null"],
+        "title": "Extracted Data",
+        "description": "Structured invoice, receipt, or custom schema JSON payload.",
+        "additionalProperties": true
+      },
+      "audit_errors": {
+        "type": ["array", "null"],
+        "title": "Audit Errors",
+        "description": "List of any remaining arithmetic or schema discrepancies if verification_passed is false."
+      }
+    }
+  },
+  "views": {
+    "overview": {
+      "title": "Verified Extractions",
+      "transformation": {
+        "fields": [
+          "source",
+          "verification_passed",
+          "attempts",
+          "latency_ms",
+          "data",
+          "audit_errors",
+          "job_id"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "source": { "label": "Source", "format": "text" },
+          "verification_passed": { "label": "Math Verified", "format": "boolean" },
+          "attempts": { "label": "Tries", "format": "number" },
+          "latency_ms": { "label": "Latency (ms)", "format": "number" },
+          "data": { "label": "Extracted JSON", "format": "object" },
+          "audit_errors": { "label": "Audit Errors", "format": "array" },
+          "job_id": { "label": "Job ID", "format": "text" }
+        }
+      }
+    }
+  }
+}

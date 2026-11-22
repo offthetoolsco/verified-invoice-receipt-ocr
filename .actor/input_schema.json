@@ -1,0 +1,41 @@
+{
+  "title": "Verified Invoice & Receipt OCR Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "documentUrls": {
+      "title": "Document URLs (PDF, JPG, PNG, WEBP)",
+      "type": "array",
+      "description": "One or more direct URLs to invoices, receipts, or multi-page PDFs.",
+      "editor": "stringList",
+      "prefill": [
+        "https://ocr-api.offthetoolsco.com.au/sample-invoice.jpg"
+      ]
+    },
+    "fileBase64": {
+      "title": "Or Base64-Encoded File (Optional — Great for AI Agents / MCP)",
+      "type": "string",
+      "description": "Optional base64 string (or data URI) of a PDF, JPG, PNG, or WEBP file if not using documentUrls.",
+      "editor": "textfield"
+    },
+    "fileName": {
+      "title": "Filename for Base64 Upload (Optional)",
+      "type": "string",
+      "description": "Example: invoice.pdf or receipt.jpg (defaults to document.pdf if omitted).",
+      "editor": "textfield",
+      "default": "invoice.pdf"
+    },
+    "jsonSchema": {
+      "title": "Custom JSON Schema (Optional)",
+      "type": "string",
+      "description": "Optional JSON Schema string. Leave empty to use the built-in Invoice & Line-Items schema.",
+      "editor": "textarea"
+    },
+    "mathRules": {
+      "title": "Custom Math Checksum Rules (Optional)",
+      "type": "string",
+      "description": "Optional JSON array of declarative arithmetic rules. Leave empty for standard qty * unit_price == line_total & subtotal + tax == total checks.",
+      "editor": "textarea"
+    }
+  }
+}

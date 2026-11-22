@@ -1,0 +1,12 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Math-Verified Invoice & Receipt OCR Output",
+  "properties": {
+    "verifiedDocuments": {
+      "type": "string",
+      "title": "Verified Documents",
+      "description": "Structured JSON extractions audited by deterministic Decimal arithmetic checksums.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
+    }
+  }
+}
