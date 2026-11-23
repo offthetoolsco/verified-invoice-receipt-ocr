@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.offthetoolsco/verified-ocr",
+  "description": "Invoice & receipt OCR to JSON with deterministic Python Decimal math verification.",
+  "version": "1.0.0",
+  "websiteUrl": "https://ocr-api.offthetoolsco.com.au",
+  "repository": {
+    "url": "https://github.com/offthetoolsco/verified-invoice-receipt-ocr",
+    "source": "github",
+    "id": "1468647554"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.apify.com/?tools=fetch-actor-details,offthetoolsco/verified-invoice-receipt-ocr"
+    }
+  ]
+}
