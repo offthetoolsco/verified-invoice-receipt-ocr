@@ -69,6 +69,26 @@ apify mcp install vscode --tools fetch-actor-details,offthetoolsco/verified-invo
 }
 ```
 
+### Local Stdio MCP (via `uvx` / `pipx`)
+Prefer a local stdio MCP server? Run directly with `uvx`:
+```json
+{
+  "mcpServers": {
+    "verified-ocr": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/offthetoolsco/verified-invoice-receipt-ocr", "verified-ocr"],
+      "env": {
+        "OCR_API_KEY": "YOUR_OCR_API_KEY"
+      }
+    }
+  }
+}
+```
+Or run from your terminal:
+```bash
+uvx --from git+https://github.com/offthetoolsco/verified-invoice-receipt-ocr verified-ocr
+```
+
 ---
 
 ## 💰 Transparent Pay-Per-Event Pricing
