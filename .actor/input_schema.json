@@ -6,7 +6,7 @@
     "documentUrls": {
       "title": "Document URLs (PDF, JPG, PNG, WEBP)",
       "type": "array",
-      "description": "One or more direct URLs to invoices, receipts, or multi-page PDFs.",
+      "description": "One or more direct URLs to invoices, receipts, or multi-page PDFs. Prefilled with a sample Australian GST tax invoice for instant 1-click trial.",
       "editor": "stringList",
       "prefill": [
         "https://ocr-api.offthetoolsco.com.au/sample-invoice.jpg"
@@ -21,7 +21,7 @@
     "fileName": {
       "title": "Filename for Base64 Upload (Optional)",
       "type": "string",
-      "description": "Example: invoice.pdf or receipt.jpg (defaults to document.pdf if omitted).",
+      "description": "Example: invoice.pdf or receipt.jpg (defaults to invoice.pdf if omitted).",
       "editor": "textfield",
       "default": "invoice.pdf"
     },

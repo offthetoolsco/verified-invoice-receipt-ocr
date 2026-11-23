@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "verified-invoice-receipt-ocr",
-  "title": "Math-Verified Invoice & Receipt OCR (Vision LLM + Checksums)",
-  "description": "Extract structured JSON from invoices, receipts & PDFs using Vision LLMs backed by deterministic Decimal arithmetic & self-healing line-item verification.",
+  "title": "Invoice & Receipt OCR API - Math-Verified Bookkeeping & MCP",
+  "description": "Invoice & Receipt OCR API and MCP Server: Extract line items to JSON with Math-Verified Bookkeeping OCR. Audited by deterministic Python Decimal math checksums.",
   "version": "1.0",
   "buildTag": "latest",
   "minMemoryMbytes": 128,
